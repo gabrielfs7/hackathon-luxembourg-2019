@@ -1,0 +1,27 @@
+﻿{
+  "id": 1,
+  "question": "It is better to go walking, by bicycle or by car to work",
+  "answers": [
+    {
+      "id": 1,
+      "correct": false,
+      "answer": "By car",
+      "energyGiven": 0,
+      "energyEarned": 0
+    },
+    {
+      "id": 1,
+      "correct": false,
+      "answer": "Walking",
+      "energyGiven": 3,
+      "energyEarned": 2
+    },
+    {
+      "id": 1,
+      "correct": false,
+      "answer": "By bicycle",
+      "energyGiven": 2,
+      "energyEarned": 1
+    }
+  ]
+}
