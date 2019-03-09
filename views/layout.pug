@@ -4,28 +4,37 @@ html
         title= `${title}`
         link(rel='stylesheet', href='/bootstrap/bootstrap.min.css')
         link(rel='stylesheet', href='/css/styles.css')
-        link(rel='stylesheet', href='/bootstrap/bootstrap.min.js')
-        link(rel='stylesheet', href='/bootstrap/jquery-3.3.1.slim.min.js')
-        link(rel='stylesheet', href='/bootstrap/popper.min.js')
         link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.0/css/all.css', integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ', crossorigin='anonymous')
+        script(src='/bootstrap/jquery-3.3.1.slim.min.js')
+        script(src='/bootstrap/bootstrap.min.js')        
+        script(src='/bootstrap/popper.min.js')  
+        script(src="https://code.createjs.com/1.0.0/createjs.min.js")
+        script(src='/city-builder/constants.js')      
+        script(src='/city-builder/buildings.js')        
+        script(src='/city-builder/drawer.js')        
+        script(src='/city-builder/canvas.js')        
     body
-        div.container-fluid.rounded
-            nav.navbar.navbar-light.bg-light
+        div.container-fluid        
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
                 a.navbar-brand(href="#")
                     img.d-inline-block.align-top(src="https://images.vexels.com/media/users/3/143426/isolated/preview/b9b84ffc510491704ecd0c5838a56271-lightning-bolt-yellow-symbol-by-vexels.png", width="30", height="30")
-                    span Electricity Academy
+                    span Electric-city Academy
+                button.navbar-toggler(type="button",data-toggle="collapse",data-target="#navbarSupportedContent",aria-controls="navbarSupportedContent",aria-expanded="false",aria-label="Toggle navigation")
+                    span.navbar-toggler-icon                
+                div.collapse.navbar-collapse.justify-content-end(id="navbarSupportedContent")
+                    ul.navbar-nav
+                        li.nav-item.active
+                            a.nav-link(href="/my-city", alt="My City")
+                                i.fa.fa-building
+                        li.nav-item
+                            a.nav-link.active(href="/cities", alt="Cities")
+                                i.fa.fa-globe
+                        li.nav-item
+                            a.nav-link(href="/ask-electricity", alt="Ask Electricity")
+                                i.fa.fa-bolt
+                        li.nav-item
+                            a.nav-link(href="/my-ropes", alt="My Ropes")
+                                i.fa.fa-retweet
 
-                ul.nav.justify-content-end
-                    li.nav-item
-                        a.nav-link.active(href="/my-city", alt="My City")
-                            i.fa.fa-building
-                        a.nav-link.active(href="/cities", alt="Cities")
-                            i.fa.fa-world
-                    li.nav-item
-                        a.nav-link(href="/ask-electricity", alt="Ask Electricity")
-                            i.fa.fa-bolt
-                    li.nav-item
-                        a.nav-link(href="/my-ropes", alt="My Ropes")
-                            i.fa.fa-retweet
-            div.main-content.rounded
+            div.main-content
                 block content

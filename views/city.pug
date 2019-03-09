@@ -1,6 +1,9 @@
 extends layout
 
 block content
-    div.panel
-        canvas(width=600, height=400, id=cityCanvas)        
-        p test
+    div.panel.sky
+        canvas(width=600, height=400, id="cityCanvas")        
+    script.
+        $(document).ready(function () {
+            init(3);
+        });

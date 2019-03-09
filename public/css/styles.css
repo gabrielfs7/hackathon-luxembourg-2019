@@ -1,14 +1,17 @@
 body {
     background: #005cbf;
-    padding:15px;
+    
 }
 
-.container-fluid {
-    background: #EAEAEA;
-    padding:15px;
-}
-
-.main-content {
-    padding: 15px;
+.main-content {    
     background: #FFF;
+}
+
+.sky {
+    background-image: url('../img/sky.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+#cityCanvas {
 }
