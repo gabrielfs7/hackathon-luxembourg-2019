@@ -32,4 +32,33 @@ router.get(
     }
 );
 
+router.get(
+    '/cities',
+    function(req, res)
+    {
+        //@TODO Return list of cities
+        res.render('form', { title: 'User form' });
+    }
+);
+
+router.get(
+    '/questions/:questionId',
+    function(req, res)
+    {
+        //req.params.questionId
+        //@TODO Return the question with the possible answers
+        res.render('form', { title: 'User form' });
+    }
+);
+
+router.post(
+    '/questions/:questionId/answer',
+    function(req, res)
+    {
+        //@TODO Receive the answer and store the points
+        //req.params.questionId
+        res.render('form', { title: 'User form' });
+    }
+);
+
 module.exports = router;

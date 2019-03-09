@@ -8,11 +8,22 @@ services:
       - ./:/usr/src/app
     depends_on:
       - mongo
+    networks:
+      - my_network
   mongo:
     image: mongo
     ports:
       - "27017:27017"
     volumes:
       - data-volume:/data/db
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    command: mongod --smallfiles --logpath=/dev/null
+    networks:
+      - my_network
 volumes:
   data-volume:
+
+networks:
+  my_network:
