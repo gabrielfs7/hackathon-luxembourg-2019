@@ -58,6 +58,14 @@ router.get(
 );
 
 router.get(
+    '/my-ropes',
+    function(req, res)
+    {
+        res.render('my-ropes', { title: 'My Ropes' });
+    }
+);
+
+router.get(
     '/questions/:questionId',
     function(req, res)
     {
