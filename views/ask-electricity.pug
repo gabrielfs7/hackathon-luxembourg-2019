@@ -6,10 +6,16 @@ block menu
 block content
     div.card
         div.card-body
+            h1 Request Electricity
+
+            p Empower your city by asking questions to players, so they can prove they have the power to answer!
+
             div.input-group.mb-3
-                input.form-control(type="text", placeholder="Search users")
+                input.form-control(type="text", placeholder="Search players")
                 div.input-group-append
-                    button.btn.btn-outline-secondary(type="button") Search
+                    button.btn.btn-primary(type="button")
+                        span Search players &nbsp;
+                        i.fa.fa-search
             table.table
                 each user in users
                     tr
