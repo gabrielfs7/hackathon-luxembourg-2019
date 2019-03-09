@@ -25,7 +25,7 @@ chart.zoomControl = new am4maps.ZoomControl();
 var originCities = [
     {
         "id": "london",
-        "title": "Gabriel (LVL 3)",
+        "title": "GAMeD City (LVL 3)",
         "destinations": ["vilnius", "reykjavik", "lisbon", "moscow", "belgrade", "ljublana", "madrid", "stockholm", "bern", "kiev", "new york"],
         "latitude": 51.5002,
         "longitude": -0.1262,
@@ -36,7 +36,7 @@ var originCities = [
     },
     {
         "id": "vilnius",
-        "title": "Andrea (LVL3)",
+        "title": "Andrea City (LVL3)",
         "destinations": ["london", "brussels", "prague", "athens", "dublin", "oslo", "moscow", "bratislava", "belgrade", "madrid"],
         "latitude": 54.6896,
         "longitude": 25.2799,
