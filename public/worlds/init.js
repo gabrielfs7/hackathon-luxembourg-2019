@@ -150,10 +150,8 @@ labelsContainer.y = 27;
 labelsContainer.layout = "horizontal";
 labelsContainer.zIndex = 10;
 
-
-
 var title = labelsContainer.createChild(am4core.Label);
-title.text = "User Cities Map";
+title.text = "Users Cities";
 title.fill = am4core.color("#cc0000");
 title.fontSize = 20;
 title.valign = "middle";
@@ -223,7 +221,7 @@ originHoverState.properties.fill = chart.colors.getIndex(1);
 // when hit on city, change lines
 originImageTemplate.events.on("hit", function(event) {
     showLines(event.target.dataItem);
-    $(location).attr('href', '/my-city')
+    $(location).attr('href', '/my-city?id=' + event.target.dataItem._dataContext.id + "&title=" + event.target.dataItem._dataContext.title)
     console.log(event.target.dataItem._dataContext.id);
 })
 
@@ -286,7 +284,7 @@ function showLines(origin) {
         }
     }
 
-    title.text = "Flights from " + dataContext.title;
+    // title.text = "";
 
     chart.zoomToGeoPoint({ latitude: dataContext.zoomLatitude, longitude: dataContext.zoomLongitude }, dataContext.zoomLevel, true);
 }
