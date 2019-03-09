@@ -149,10 +149,7 @@ labelsContainer.y = 27;
 labelsContainer.layout = "horizontal";
 labelsContainer.zIndex = 10;
 
-var plane = labelsContainer.createChild(am4core.Sprite);
-plane.scale = 0.15;
-plane.path = planeSVG;
-plane.fill = am4core.color("#cc0000");
+
 
 var title = labelsContainer.createChild(am4core.Label);
 title.text = "User Cities Map";
@@ -205,6 +202,8 @@ originImageTemplate.states.create("hover");
 originImageTemplate.horizontalCenter = "middle";
 originImageTemplate.verticalCenter = "middle";
 
+//originImageTemplate.addEventListener("clickMapObject", function(){ alert("Hello World!"); });
+
 var originHitCircle = originImageTemplate.createChild(am4core.Circle);
 originHitCircle.radius = 11;
 originHitCircle.fill = interfaceColors.getFor("background");
@@ -223,6 +222,8 @@ originHoverState.properties.fill = chart.colors.getIndex(1);
 // when hit on city, change lines
 originImageTemplate.events.on("hit", function(event) {
     showLines(event.target.dataItem);
+    $(location).attr('href', '/my-city')
+    console.log(event.target.dataItem._dataContext.id);
 })
 
 // destination series (small targets)
@@ -262,6 +263,8 @@ chart.events.on("ready", function() {
 })
 
 
+
+
 var currentOrigin;
 
 function showLines(origin) {
@@ -282,7 +285,7 @@ function showLines(origin) {
         }
     }
 
-    //title.text = "Flights from " + dataContext.title;
+    title.text = "Flights from " + dataContext.title;
 
     chart.zoomToGeoPoint({ latitude: dataContext.zoomLatitude, longitude: dataContext.zoomLongitude }, dataContext.zoomLevel, true);
 }
