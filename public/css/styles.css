@@ -38,3 +38,15 @@ a.city-icon {
     height: 50px;
     border-radius: 50%;
 }
+
+table.new-building tr td i:first-child {
+    font-size: 50px;
+}
+
+table.new-building tr td {
+    text-align: center;
+}
+
+table.new-building tr td span {
+    color: #999
+}

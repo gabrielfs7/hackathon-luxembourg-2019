@@ -1,0 +1,41 @@
+extends layout
+
+block menu
+    include menu.pug
+
+block content
+    div.card
+        div.card-body
+            h3 New Building
+
+            p Power up and evolve your city by settling more buildings. Each building can give you an advantage. Choose wisely!
+
+            table.table.new-building
+                tr
+                   td
+                       button(type=button class='btn btn-success')
+                           i.fa.fa-home 
+                           i.fa.fa-bolt  1                                                  
+                       br    
+                       span A beautiful House.
+                   td
+                       button(type=button class='btn btn-light')
+                           i.fa.fa-building                            
+                           i.fa.fa-bolt  3
+                       br
+                       span  You need 3 houses to create a building.                                              
+                tr
+                   td
+                       button(type=button class='btn btn-light')
+                           i.fa.fa-book  
+                           i.fa.fa-bolt  5
+                       br                       
+                       span You need 2 buildings to create a Library
+                   td
+                       button(type=button class='btn btn-light')
+                           i.fa.fa-university 
+                           i.fa.fa-bolt  7
+                       br
+                       span You need 1 Library to create an University.
+                       br
+                       span You need to full light a university to create a new University.
