@@ -14,9 +14,14 @@ block content
                 each user in users
                     tr
                         td
-                            div.custom-control.custom-checkbox
-                                input.custom-control-input(type="checkbox", name="user", id="option_" + user.id, value=user.id)
-                        td
-                           label.custom-control-label(for="option_" + user.id)
-                               img.avatar(src=user.avatar)
+                            img.avatar(src=user.avatar)
                         td=user.name
+                        td
+                            i.fa.fa-globe.text-success &nbsp
+                            span=user.ropes
+                            span &nbsp;&nbsp;
+                            i.fa.fa-bolt.text-warning &nbsp
+                            span=user.energy
+                        td
+                            button(type=button class='btn btn-success')
+                                i.fa.fa-bolt &nbsp;Request Electricity

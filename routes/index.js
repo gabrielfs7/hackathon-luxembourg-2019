@@ -44,22 +44,30 @@ router.get(
             {
                 "id": 1,
                 "name": "John Willian",
-                "avatar": "/img/avatar6.png",
+                "avatar": "/img/avatar2.png",
+                "energy": 37,
+                "ropes": 22,
             },
             {
                 "id": 2,
-                "name": "John Willian",
+                "name": "Maggy Tailor",
                 "avatar": "/img/avatar6.png",
+                "energy": 30,
+                "ropes": 15,
             },
             {
                 "id": 3,
                 "name": "John Willian",
-                "avatar": "/img/avatar6.png",
+                "avatar": "/img/img_avatar.png",
+                "energy": 17,
+                "ropes": 10,
             },
             {
                 "id": 4,
-                "name": "John Willian",
-                "avatar": "/img/avatar6.png",
+                "name": "Anna Hilston",
+                "avatar": "/img/img_avatar2.png",
+                "energy": 15,
+                "ropes": 10,
             },
         ];
 
