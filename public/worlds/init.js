@@ -33,7 +33,6 @@ var originCities = [
         "zoomLevel": 2.74,
         "zoomLongitude": -20.1341,
         "zoomLatitude": 49.1712,
-        "link": "http://www.google.com",
     },
     {
         "id": "vilnius",

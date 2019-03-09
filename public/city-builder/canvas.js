@@ -3,7 +3,7 @@ var positionX = 5;
 var totalRooms = 0;
 
 var buildings = [
-    new Building(1, "hospital", 2, 4, "#DDDDDD"),
+    new Building(1, "library", 2, 4, "#DDDDDD"),
     new Building(1, "school", 2, 2, "#1694c9"),
     new Building(1, "university", 3, 3, "#FFAAAA"),
     new Building(1, "house", 1, 2, "#FF0000")
@@ -16,7 +16,7 @@ function init(onRooms, mustRefresh, buildingNumber, createNewHouse) {
         return;
     }
 
-    if (!buildingNumber) {
+    if (buildingNumber === false) {
         buildingNumber = Math.floor(Math.random() * (buildings.length - 1));
     }
 

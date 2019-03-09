@@ -19,14 +19,24 @@ block content
                         a.nav-link.city-icon(href="#", alt="Ropes")
                                 i.fa.fa-retweet
                                 span 10
-        canvas(width=600, height=400, id="cityCanvas")
+        canvas(width=900, height=400, id="cityCanvas")
         input(type="hidden", value=createNewHouse, id="createNewHouse")
     script.
         $(document).ready(function () {
-            init(0, true, 1);
-            init(2, false, 3);
-            init(2, false, 0);
-            init(2, false, 2);
-            init(1, false, 3);
+            init(4, true, 1); // school
+            init(2, false, 3); // house
+            init(2, false, 3); // house
+            init(2, false, 0); // library
+            init(4, false, 1); // school
+            init(4, false, 2); // university
+            init(2, false, 3); // house
+
+            init(4, false, 1); // school
+            init(2, false, 3); // house
+            init(2, false, 0); // library
+            init(2, false, 3); // house
+            init(4, false, 2); // university
+            init(4, false, 1); // school
+            init(2, false, 3); // house
             init(1, false, 3, $('#createNewHouse').val());
         });
