@@ -3,8 +3,9 @@ html
     head
         title= `${title}`
         link(rel='stylesheet', href='/bootstrap/bootstrap.min.css')
-        link(rel='stylesheet', href='/bootstrap/all.min.css')
-        link(rel='stylesheet', href='/css/styles.css')    
+        link(rel='stylesheet', href='/worlds/worlds.css')
+        link(rel='stylesheet', href='/css/styles.css')
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.0/css/all.css', integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ', crossorigin='anonymous')
         script(src='/bootstrap/jquery-3.3.1.slim.min.js')
         script(src='/bootstrap/bootstrap.min.js')        
         script(src='/bootstrap/popper.min.js')  
@@ -15,6 +16,11 @@ html
         script(src='/city-builder/buildings.js')        
         script(src='/city-builder/drawer.js')        
         script(src='/city-builder/canvas.js')        
+        script(src='/worlds/core.js')        
+        script(src='/worlds/maps.js')        
+        script(src='/worlds/worldLow.js')  
+        script(src='/worlds/frozen.js') 
+        script(src='/worlds/animated.js') 
     body
         div.container-fluid        
             block menu

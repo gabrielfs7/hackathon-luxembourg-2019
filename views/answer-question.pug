@@ -6,7 +6,7 @@ block menu
 block content
     div.card
         div.card-body
-            h1= question.question
+            h3= question.question
 
             form(action="/questions/5c835e57d8dd80157d82eb8e/answer-correct" method="GET")
                 each answer in question.answers
