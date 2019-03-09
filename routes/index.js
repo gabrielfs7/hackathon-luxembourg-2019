@@ -15,7 +15,24 @@ router.get(
     '/',
     function(req, res)
     {
-        res.render('index', { title: 'User form' });
+        var users = [
+            {
+                "id": 1,
+                "name": "John Willian",
+                "avatar": "/img/avatar2.png",
+                "energy": 37,
+                "ropes": 22,
+            },
+            {
+                "id": 2,
+                "name": "Maggy Tailor",
+                "avatar": "/img/avatar6.png",
+                "energy": 30,
+                "ropes": 15,
+            },        
+        ];
+
+        res.render('index', { title: 'Home Page', users: users });
     }
 );
 

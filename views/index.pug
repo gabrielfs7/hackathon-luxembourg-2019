@@ -4,9 +4,39 @@ block menu
     include menu.pug
 
 block content
-    div.panel
-        p here
-        button(type=button class='btn btn-primary') Primary
+    .card
+        .card-body
+            h3 Your daily electriCITY report
+            hr
+            .container
+                div.row
+                    div.col
+                        h4 GAMeD City
+                        ul.list-group.list-group-flush
+                            li.list-group-item Level
+                                strong  2
+                            li.list-group-item Yesterday you received
+                                strong  150 electricity
+                            li.list-group-item 
+                                a.btn.btn-primary(href="/questions/1/answer") You received new electricity requests
+                                        span.badge.badge-light 1
+                    div.col
+                        h4 Your best connections
+                        table.table
+                            each user in users
+                                tr
+                                    td
+                                        img.avatar(src=user.avatar)
+                                    td=user.name
+                                    td
+                                        i.fa.fa-globe.text-success &nbsp
+                                        span=user.ropes
+                                        span &nbsp;&nbsp;
+                                        i.fa.fa-bolt.text-warning &nbsp
+                                        span=user.energy
+                                    td
+                                        button(type=button class='btn btn-success')
+                                            i.fa.fa-bolt &nbsp;Request Electricity                
 
-        div.spinner-border.text-primary(role="status")
-            span.sr-only Loading...
+
+        
