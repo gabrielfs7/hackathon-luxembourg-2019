@@ -2,8 +2,26 @@ extends layout
 
 block menu
     include menu.pug
-    
+
 block content
     div.card
         div.card-body
-            p ask-electricity...
+            div.input-group.mb-3
+                input.form-control(type="text", placeholder="Search users")
+                div.input-group-append
+                    button.btn.btn-outline-secondary(type="button") Search
+            table.table
+                each user in users
+                    tr
+                        td
+                            img.avatar(src=user.avatar)
+                        td=user.name
+                        td
+                            i.fa.fa-globe.text-success &nbsp
+                            span=user.ropes
+                            span &nbsp;&nbsp;
+                            i.fa.fa-bolt.text-warning &nbsp
+                            span=user.energy
+                        td
+                            button(type=button class='btn btn-success')
+                                i.fa.fa-bolt &nbsp;Request Electricity
