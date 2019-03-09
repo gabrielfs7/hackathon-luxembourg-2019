@@ -69,7 +69,7 @@ router.get(
             },
             {
                 "id": 3,
-                "name": "John Willian",
+                "name": "Paul Micheal",
                 "avatar": "/img/img_avatar.png",
                 "energy": 17,
                 "ropes": 10,
