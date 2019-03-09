@@ -5,8 +5,8 @@ var totalRooms = 0;
 var buildings = [
     new Building(1, "library", 2, 4, "#DDDDDD"),
     new Building(1, "school", 2, 2, "#1694c9"),
-    new Building(1, "university", 3, 3, "#FFAAAA"),
-    new Building(1, "house", 1, 2, "#FF0000")
+    new Building(1, "university", 3, 3, "#902290"),
+    new Building(1, "house", 1, 2, "#006600")
 ];
 
 function init(onRooms, mustRefresh, buildingNumber, createNewHouse) {
