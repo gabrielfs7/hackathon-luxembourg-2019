@@ -2,10 +2,12 @@ version: "2"
 services:
   web:
     build: .
+    command: npm run watch
     ports:
       - "8080:8080"
     volumes:
-      - ./:/usr/src/app
+      - .:/usr/app/
+      - /usr/app/node_modules
     depends_on:
       - mongo
     networks:
