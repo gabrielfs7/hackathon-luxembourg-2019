@@ -1,6 +1,5 @@
 body {
-    background: #005cbf;
-
+    
 }
 
 .main-content {
@@ -8,10 +7,9 @@ body {
 }
 
 .sky {
-    background-image: url('../img/sky.jpg');
+    background-image: url('../img/sky.png');
     background-repeat: no-repeat;
     background-clip: padding-box;
-    background-position: bottom center;
     background-size:100%;
     width: 100%;
     height: 460px;
