@@ -1,9 +1,26 @@
 extends layout
 
+block menu
+    include menu.pug
+
 block content
-    div.panel.sky
+    div.sky.container-fluid
+        nav.navbar.navbar-light.bg-transparent
+            div
+                ul.nav
+                    li.nav-item
+                        a.nav-link.city-icon(href="#")
+                            span CODINGLAND
+                    li.nav-item
+                        a.nav-link.city-icon(href="#", alt="Energy")
+                                i.fa.fa-bolt
+                                span  150
+                    li.nav-item
+                        a.nav-link.city-icon(href="#", alt="Energy")
+                                i.fa.fa-retweet
+                                span 10                                
         canvas(width=600, height=400, id="cityCanvas")        
-    script.
+    script.        
         $(document).ready(function () {
-            init(3);
+            init(3);            
         });
