@@ -5,10 +5,10 @@ const questionSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
-    answers: {
-        type: Answer,
-        trim: true,
-    },
+    // answers: {
+    //     type: Answer,
+    //     trim: true,
+    // },
 });
 
 module.exports = mongoose.model('Question', questionSchema);

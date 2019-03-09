@@ -1,9 +1,9 @@
 ﻿const mongoose = require('mongoose');
 
 const citySchema = new mongoose.Schema({
-    user: {
-        type: User,
-    },
+    // user: {
+    //     type: User,
+    // },
     name: {
         type: String,
         trim: true,
