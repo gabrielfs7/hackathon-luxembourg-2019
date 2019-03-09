@@ -1,14 +1,33 @@
 body {
     background: #005cbf;
-    padding:15px;
+    
 }
 
-.container-fluid {
-    background: #EAEAEA;
-    padding:15px;
-}
-
-.main-content {
-    padding: 15px;
+.main-content {    
     background: #FFF;
+}
+
+.sky {
+    background-image: url('../img/sky.jpg');
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    background-position: bottom center;
+    background-size:100%;
+    width: 100%;
+    height: 460px;
+    
+    overflow:hidden;
+}
+
+a.city-icon {
+    color: yellow!important;
+}
+
+#cityCanvas {
+    
+    position:relative;
+    left:0;
+    top:0;
+    bottom: 0;
+    right: 0;
 }
