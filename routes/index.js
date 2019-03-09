@@ -13,7 +13,7 @@ router.get(
         User.find()
         .then(
             function (users) {
-                res.render('index', { title: 'Listing users', users });
+                res.render('index', { title: ' Listing users', users });
             }
         )
         .catch(
@@ -28,7 +28,7 @@ router.get(
     '/',
     function(req, res)
     {
-        res.render('form', { title: 'User form' });
+        res.render('index', { title: 'User form' });
     }
 );
 
@@ -37,7 +37,7 @@ router.get(
     function(req, res)
     {
         //@TODO Return list of cities
-        res.render('form', { title: 'User form' });
+        res.render('cities', { title: 'User form' });
     }
 );
 
@@ -46,6 +46,14 @@ router.get(
     function(req, res)
     {
         res.render('city', { title: 'My City' });
+    }
+);
+
+router.get(
+    '/ask-electricity',
+    function(req, res)
+    {
+        res.render('ask-electricity', { title: 'Ask Electricity' });
     }
 );
 
