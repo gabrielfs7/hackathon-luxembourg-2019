@@ -18,7 +18,7 @@ block content
                         i.fa.fa-search
             table.table
                 each user in users
-                    tr
+                    tr(id="user_" + user.id)
                         td
                             img.avatar(src=user.avatar)
                         td=user.name
@@ -29,5 +29,5 @@ block content
                             i.fa.fa-bolt.text-warning &nbsp
                             span=user.energy
                         td
-                            button(type=button class='btn btn-success')
+                            button(type=button class='btn btn-success', onclick="$('#user_" + user.id + "').toggle('slow', function(){});")
                                 i.fa.fa-bolt &nbsp;Request Electricity

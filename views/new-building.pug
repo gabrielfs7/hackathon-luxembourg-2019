@@ -13,27 +13,27 @@ block content
             table.table.new-building
                 tr
                    td
-                       button(type=button class='btn btn-success')
-                           i.fa.fa-home 
-                           i.fa.fa-bolt  1                                                  
-                       br    
+                       a.btn.btn-success(href="/my-city?new_house=1")
+                           i.fa.fa-home
+                           i.fa.fa-bolt  1
+                       br
                        span A beautiful House.
                    td
-                       button(type=button class='btn btn-light')
-                           i.fa.fa-building                            
+                       a.btn.btn-light.disabled
+                           i.fa.fa-building
                            i.fa.fa-bolt  3
                        br
-                       span  You need 3 houses to create a building.                                              
+                       span  You need 3 houses to create a building.
                 tr
                    td
-                       button(type=button class='btn btn-light')
-                           i.fa.fa-book  
+                       a.btn.btn-light.disabled
+                           i.fa.fa-book
                            i.fa.fa-bolt  5
-                       br                       
+                       br
                        span You need 2 buildings to create a Library
                    td
-                       button(type=button class='btn btn-light')
-                           i.fa.fa-university 
+                       a.btn.btn-light.disabled
+                           i.fa.fa-university
                            i.fa.fa-bolt  7
                        br
                        span You need 1 Library to create an University.

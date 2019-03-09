@@ -5,13 +5,6 @@ const User = mongoose.model('User');
 const Question = mongoose.model('Question');
 
 router.get(
-    '/users',
-    function(req, res) {
-        res.render('index', { title: ' Listing users', users: [] });
-    }
-);
-
-router.get(
     '/',
     function(req, res)
     {
@@ -29,7 +22,7 @@ router.get(
                 "avatar": "/img/avatar6.png",
                 "energy": 30,
                 "ropes": 15,
-            },        
+            },
         ];
 
         res.render('index', { title: 'Home Page', users: users });
@@ -49,7 +42,9 @@ router.get(
     '/my-city',
     function(req, res)
     {
-        res.render('city', { title: 'My City' });
+        var createNewHouse = req.query.new_house !== undefined && req.query.new_house == 1 ? 1 : 0;
+
+        res.render('city', { title: 'My City', createNewHouse: createNewHouse });
     }
 );
 
@@ -89,14 +84,6 @@ router.get(
         ];
 
         res.render('ask-electricity', { title: 'Ask Electricity', users: users });
-    }
-);
-
-router.get(
-    '/my-ropes',
-    function(req, res)
-    {
-        res.render('my-ropes', { title: 'My Ropes' });
     }
 );
 
