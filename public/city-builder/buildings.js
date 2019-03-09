@@ -7,11 +7,12 @@ let getFloorHeight = function() {
 }
 
 class Building {
-    constructor(id, type, floors, rooms) {
+    constructor(id, type, floors, rooms, color) {
         this.id = id;
         this.type = type;
         this.floors = floors;
         this.rooms = rooms;
+        this.color = color;
         this.width = getFloorWidth(rooms);
         this.height = getFloorHeight() * floors + entranceHeight + roofHeight;        
     }
