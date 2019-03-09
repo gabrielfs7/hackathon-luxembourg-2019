@@ -3,24 +3,13 @@ const mongoose = require('mongoose');
 
 const router = express.Router();
 
-const { body, validationResult } = require('express-validator/check');
-
 const User = mongoose.model('User');
+const Question = mongoose.model('Question');
 
 router.get(
     '/users',
     function(req, res) {
-        User.find()
-        .then(
-            function (users) {
-                res.render('index', { title: ' Listing users', users });
-            }
-        )
-        .catch(
-            function () {
-                res.send('Sorry! Something went wrong.');
-            }
-        );
+        res.render('index', { title: ' Listing users', users: [] });
     }
 );
 
@@ -75,13 +64,49 @@ router.get(
     }
 );
 
-router.post(
+router.get(
     '/questions/:questionId/answer',
     function(req, res)
     {
-        //@TODO Receive the answer and store the points
-        //req.params.questionId
-        res.render('form', { title: 'User form' });
+        var errorVariable = null;
+
+        var questionVariable = {
+            "question": "My Question",
+            "answers": [
+                {
+                    "correct": false,
+                    "answer": "Alternative 1",
+                    "electricity": 0
+                },
+                {
+                    "correct": true,
+                    "answer": "Alternative 2",
+                    "electricity": 1
+                },
+                {
+                    "correct": true,
+                    "answer": "Alternative 3",
+                    "electricity": 2
+                },
+            ]
+        }
+
+        //
+        // Question.findById(
+        //     req.params.questionId,
+        //     function (err, row) {
+        //         if (!err) {
+        //             errorVariable = JSON.stringify(err, undefined, 2);
+        //         } else {
+        //             questionVariable = row;
+        //
+        //             console.log('....................................................');
+        //             console.log(questionVariable);
+        //         }
+        //     }
+        // );
+
+        res.render('answer-question', { title: 'Answer Question', question: questionVariable });
     }
 );
 

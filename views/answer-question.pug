@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div.panel
+        h1= question.question
+
+        each answer in question.answers
+            div.custom-control.custom-checkbox
+                input.custom-control-input(type="checkbox", id="defaultUnchecked")
+                label.custom-control-label(for="defaultUnchecked")= answer.answer
