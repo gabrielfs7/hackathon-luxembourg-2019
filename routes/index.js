@@ -1,26 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 const router = express.Router();
-
-const { body, validationResult } = require('express-validator/check');
-
 const User = mongoose.model('User');
+const Question = mongoose.model('Question');
 
 router.get(
     '/users',
     function(req, res) {
-        User.find()
-        .then(
-            function (users) {
-                res.render('index', { title: ' Listing users', users });
-            }
-        )
-        .catch(
-            function () {
-                res.send('Sorry! Something went wrong.');
-            }
-        );
+        res.render('index', { title: ' Listing users', users: [] });
     }
 );
 
@@ -75,13 +62,65 @@ router.get(
     }
 );
 
-router.post(
+router.get(
     '/questions/:questionId/answer',
     function(req, res)
     {
-        //@TODO Receive the answer and store the points
-        //req.params.questionId
-        res.render('form', { title: 'User form' });
+        var questionVariable = {
+            "question": "What is the best Tech event in Luxembourg?",
+            "answers": [
+                {
+                    "id": 1,
+                    "correct": true,
+                    "answer": "Game of Code",
+                    "electricity": 2
+                },
+                {
+                    "id": 2,
+                    "correct": true,
+                    "answer": "Schueberfouer",
+                    "electricity": 0
+                },
+                {
+                    "id": 3,
+                    "correct": true,
+                    "answer": "My Team's Daily stand-up",
+                    "electricity": 1
+                },
+                {
+                    "id": 4,
+                    "correct": true,
+                    "answer": "Utopolis Movie Theater",
+                    "electricity": 0
+                }
+            ]
+        }
+
+        res.render('answer-question', { title: 'Answer Question', question: questionVariable });
+    }
+);
+
+router.get(
+    '/questions/:questionId/answer-correct',
+    function(req, res)
+    {
+        var isCorrect = req.query.answer !== undefined && req.query.answer == 1;
+
+        var questionVariable = {
+            "question": "What is the best Tech event in Luxembourg?",
+            "answer": "Game of Code",
+            "electricity": 2
+        }
+
+        res.render('answer-correct', { title: 'Correct Answer', question: questionVariable, isCorrect: isCorrect });
+    }
+);
+
+router.get(
+    '/questions/:questionId/answer-wrong',
+    function(req, res)
+    {
+        res.render('answer-wrong', { title: 'Correct Answer' });
     }
 );
 
