@@ -2,8 +2,21 @@ extends layout
 
 block menu
     include menu.pug
-    
+
 block content
     div.card
         div.card-body
-            p ask-electricity...
+            div.input-group.mb-3
+                input.form-control(type="text", placeholder="Search users")
+                div.input-group-append
+                    button.btn.btn-outline-secondary(type="button") Search
+            table.table
+                each user in users
+                    tr
+                        td
+                            div.custom-control.custom-checkbox
+                                input.custom-control-input(type="checkbox", name="user", id="option_" + user.id, value=user.id)
+                        td
+                           label.custom-control-label(for="option_" + user.id)
+                               img.avatar(src=user.avatar)
+                        td=user.name

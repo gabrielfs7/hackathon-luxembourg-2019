@@ -40,7 +40,30 @@ router.get(
     '/ask-electricity',
     function(req, res)
     {
-        res.render('ask-electricity', { title: 'Ask Electricity' });
+        var users = [
+            {
+                "id": 1,
+                "name": "John Willian",
+                "avatar": "/img/avatar6.png",
+            },
+            {
+                "id": 2,
+                "name": "John Willian",
+                "avatar": "/img/avatar6.png",
+            },
+            {
+                "id": 3,
+                "name": "John Willian",
+                "avatar": "/img/avatar6.png",
+            },
+            {
+                "id": 4,
+                "name": "John Willian",
+                "avatar": "/img/avatar6.png",
+            },
+        ];
+
+        res.render('ask-electricity', { title: 'Ask Electricity', users: users });
     }
 );
 
