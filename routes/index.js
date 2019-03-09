@@ -42,6 +42,14 @@ router.get(
 );
 
 router.get(
+    '/my-city',
+    function(req, res)
+    {
+        res.render('city', { title: 'My City' });
+    }
+);
+
+router.get(
     '/questions/:questionId',
     function(req, res)
     {

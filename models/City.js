@@ -1,13 +1,14 @@
 ﻿const mongoose = require('mongoose');
 
 const citySchema = new mongoose.Schema({
-    // user: {
-    //     type: User,
-    // },
+    user : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref:'user'
+    },
     name: {
         type: String,
-        trim: true,
-    },
+        trim: true
+    }
 });
 
 module.exports = mongoose.model('City', citySchema);

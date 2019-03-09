@@ -6,8 +6,8 @@ const questionSchema = new mongoose.Schema({
         trim: true,
     },
     // answers: {
-    //     type: Answer,
-    //     trim: true,
+    //     type: [Answer],
+    //     default: undefined
     // },
 });
 

@@ -1,19 +1,9 @@
 extends layout
 
 block content
-    form(action="." method="POST")
-        label(for="name") Name:
-        input(
-            type="text"
-            id="name"
-            name="name"
-        )
+    div.panel
+        p here
+        button(type=button class='btn btn-primary') Primary
 
-        label(for="email") Email:
-        input(
-            type="email"
-            id="email"
-            name="email"
-        )
-
-        input(type="submit" value="Submit")
+        div.spinner-border.text-primary(role="status")
+            span.sr-only Loading...

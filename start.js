@@ -1,6 +1,6 @@
-require('./models/Answer');
 require('./models/Building');
 require('./models/City');
+require('./models/Answer');
 require('./models/Question');
 require('./models/PowerPlant');
 require('./models/User');
@@ -14,7 +14,7 @@ mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection
     .on('connected', function() {
-    console.log(`Mongoose connection open on ${process.env.DATABASE}`);
+    console.log(`Mongoose  connection open on ${process.env.DATABASE}`);
 })
 .on('error', function(err) {
     console.log(`Connection error: ${err.message}`);
