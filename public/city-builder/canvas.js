@@ -4,22 +4,25 @@ var totalRooms = 0;
 
 var buildings = [
     new Building(1, "hospital", 2, 4, "#DDDDDD"),
-    new Building(1, "school", 1, 2, "#1694c9"),
+    new Building(1, "school", 2, 2, "#1694c9"),
     new Building(1, "university", 3, 3, "#FFAAAA"),
-    new Building(1, "house", 1, 3, "#FF0000")
+    new Building(1, "house", 1, 2, "#FF0000")
 ];
 
-function init(onRooms, mustRefresh) {                              
-    var random = Math.floor(Math.random() * (buildings.length - 1));
+function init(onRooms, mustRefresh, buildingNumber) {                              
+    if (!buildingNumber) {
+        buildingNumber = Math.floor(Math.random() * (buildings.length - 1));
+    }
+    
+    building = buildings[buildingNumber];
+
     console.log("onRooms ", onRooms);  
     if (mustRefresh) {
         stage = new createjs.Stage("cityCanvas");
     }
-    console.log(random);
-    console.log(buildings[random]);
-
-    onRooms = drawBuilding(stage, buildings[random], positionX, (canvasHeight - buildings[random].height), onRooms, buildings[random].color);    
-    positionX += buildings[random].width + buildingsPadding;
+    
+    onRooms = drawBuilding(stage, building, positionX, (canvasHeight - building.height), onRooms, building.color);    
+    positionX += building.width + buildingsPadding;
     // onRooms = drawBuilding(stage, school, positionX, (canvasHeight - school.height), onRooms, "#1694c9");    
     // positionX += school.width + buildingsPadding;
     // onRooms = drawBuilding(stage, house, positionX, (canvasHeight - house.height), onRooms, "#FFAAAA");    
