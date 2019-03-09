@@ -1,10 +1,19 @@
 extends layout
 
-block content
-    div.panel
-        h1= question.question
+block menu
+    include menu.pug
 
-        each answer in question.answers
-            div.custom-control.custom-checkbox
-                input.custom-control-input(type="checkbox", id="defaultUnchecked")
-                label.custom-control-label(for="defaultUnchecked")= answer.answer
+block content
+    div.card
+        div.card-body
+            h1= question.question
+
+            form(action="/questions/5c835e57d8dd80157d82eb8e/answer-correct" method="GET")
+                each answer in question.answers
+                    div.custom-control.custom-radio
+                        input.custom-control-input(type="radio", name="answer", id="option_" + answer.id, value=answer.id)
+                        label.custom-control-label(for="option_" + answer.id)= answer.answer
+                br
+                button(type=submit class='btn btn-primary') Answer
+                span &nbsp;&nbsp;
+                button(type=button class='btn btn-danger') I do not know

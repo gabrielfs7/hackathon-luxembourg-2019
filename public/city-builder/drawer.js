@@ -14,18 +14,6 @@ var drawRoom = function(positionX, positionY, status) {
 } 
 
 var drawFloor = function(stage, positionX, positionY, rooms, level, onRooms) {
-    // console.log("Floor n. ", level);
-    // let color = "#555555";
-    // if (level % 2 === 0) {
-    //     color = "#999999";
-    // }
-    // var graphics = new createjs.Graphics().beginFill(color)
-    //         .drawRect(positionX, positionY, getFloorWidth(rooms), getFloorHeight());
-
-    // var shape = new createjs.Shape(graphics);
-
-    // stage.addChild(shape);
-
     let roomX = positionX;
 
     for (let i=1; i <= rooms; i++) {
@@ -35,7 +23,18 @@ var drawFloor = function(stage, positionX, positionY, rooms, level, onRooms) {
         status = onRooms > 0 ? 1 : 0;
         onRooms--;
 
-        stage.addChild(drawRoom(roomX, positionY + padding, status));
+        var room = drawRoom(roomX, positionY + padding, status)
+
+        stage.addChild(room);
+
+        if (status == 1) {
+            createjs.ColorPlugin.install();
+
+            createjs.Tween.get(room)    
+                .to({style:"#000000"}, 500)
+                .to({style:"#FFFF00"}, 1000);
+        }
+
         roomX += roomWidth;
     }
 
@@ -49,6 +48,10 @@ var drawBuilding = function(stage, building, positionX, positionY, onRooms, colo
     var shape = new createjs.Shape(graphics);
 
     stage.addChild(shape);
+
+    createjs.Tween.get(shape, {loop: false})
+        .to({ alpha: 0 }, 100)
+        .to({ alpha: 1 }, 1000, createjs.Ease.getPowInOut(2));
 
     for (let i=1; i <= building.floors; i++) {
         let floorX = positionX;

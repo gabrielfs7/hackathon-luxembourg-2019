@@ -10,17 +10,18 @@ block content
                 ul.nav
                     li.nav-item
                         a.nav-link.city-icon(href="#")
-                            span CODINGLAND
+                            span GAMeD City
                     li.nav-item
                         a.nav-link.city-icon(href="#", alt="Energy")
                                 i.fa.fa-bolt
                                 span  150
                     li.nav-item
-                        a.nav-link.city-icon(href="#", alt="Energy")
+                        a.nav-link.city-icon(href="#", alt="Ropes")
                                 i.fa.fa-retweet
                                 span 10                                
         canvas(width=600, height=400, id="cityCanvas")        
     script.        
         $(document).ready(function () {
-            init(3);            
+            init(0, true, 1);     
+            init(1, false, 3);       
         });

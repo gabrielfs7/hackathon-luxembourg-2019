@@ -1,17 +1,16 @@
 block menu
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
-                a.navbar-brand(href="#")
-                    img.d-inline-block.align-top(src="https://images.vexels.com/media/users/3/143426/isolated/preview/b9b84ffc510491704ecd0c5838a56271-lightning-bolt-yellow-symbol-by-vexels.png", width="30", height="30")
-                    span Electri-city Academy
+                a.navbar-brand(href="/")
+                    img.d-inline-block.align-top(src="/img/logo.png")                    
                 button.navbar-toggler(type="button",data-toggle="collapse",data-target="#navbarSupportedContent",aria-controls="navbarSupportedContent",aria-expanded="false",aria-label="Toggle navigation")
-                    span.navbar-toggler-icon                
+                    span.navbar-toggler-icon
                 div.collapse.navbar-collapse.justify-content-end(id="navbarSupportedContent")
                     ul.navbar-nav
-                        li.nav-item.active
+                        li.nav-item
                             a.nav-link(href="/my-city", alt="My City")
                                 i.fa.fa-building
                         li.nav-item
-                            a.nav-link.active(href="/cities", alt="Cities")
+                            a.nav-link(href="/cities", alt="Cities")
                                 i.fa.fa-globe
                         li.nav-item
                             a.nav-link(href="/ask-electricity", alt="Ask Electricity")

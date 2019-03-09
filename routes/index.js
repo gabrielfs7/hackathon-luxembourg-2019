@@ -1,8 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 const router = express.Router();
-
 const User = mongoose.model('User');
 const Question = mongoose.model('Question');
 
@@ -42,7 +40,38 @@ router.get(
     '/ask-electricity',
     function(req, res)
     {
-        res.render('ask-electricity', { title: 'Ask Electricity' });
+        var users = [
+            {
+                "id": 1,
+                "name": "John Willian",
+                "avatar": "/img/avatar2.png",
+                "energy": 37,
+                "ropes": 22,
+            },
+            {
+                "id": 2,
+                "name": "Maggy Tailor",
+                "avatar": "/img/avatar6.png",
+                "energy": 30,
+                "ropes": 15,
+            },
+            {
+                "id": 3,
+                "name": "John Willian",
+                "avatar": "/img/img_avatar.png",
+                "energy": 17,
+                "ropes": 10,
+            },
+            {
+                "id": 4,
+                "name": "Anna Hilston",
+                "avatar": "/img/img_avatar2.png",
+                "energy": 15,
+                "ropes": 10,
+            },
+        ];
+
+        res.render('ask-electricity', { title: 'Ask Electricity', users: users });
     }
 );
 
@@ -68,45 +97,61 @@ router.get(
     '/questions/:questionId/answer',
     function(req, res)
     {
-        var errorVariable = null;
-
         var questionVariable = {
-            "question": "My Question",
+            "question": "What is the best Tech event in Luxembourg?",
             "answers": [
                 {
-                    "correct": false,
-                    "answer": "Alternative 1",
+                    "id": 1,
+                    "correct": true,
+                    "answer": "Game of Code",
+                    "electricity": 2
+                },
+                {
+                    "id": 2,
+                    "correct": true,
+                    "answer": "Schueberfouer",
                     "electricity": 0
                 },
                 {
+                    "id": 3,
                     "correct": true,
-                    "answer": "Alternative 2",
+                    "answer": "My Team's Daily stand-up",
                     "electricity": 1
                 },
                 {
+                    "id": 4,
                     "correct": true,
-                    "answer": "Alternative 3",
-                    "electricity": 2
-                },
+                    "answer": "Utopolis Movie Theater",
+                    "electricity": 0
+                }
             ]
         }
 
-        //
-        // Question.findById(
-        //     req.params.questionId,
-        //     function (err, row) {
-        //         if (!err) {
-        //             errorVariable = JSON.stringify(err, undefined, 2);
-        //         } else {
-        //             questionVariable = row;
-        //
-        //             console.log('....................................................');
-        //             console.log(questionVariable);
-        //         }
-        //     }
-        // );
-
         res.render('answer-question', { title: 'Answer Question', question: questionVariable });
+    }
+);
+
+router.get(
+    '/questions/:questionId/answer-correct',
+    function(req, res)
+    {
+        var isCorrect = req.query.answer !== undefined && req.query.answer == 1;
+
+        var questionVariable = {
+            "question": "What is the best Tech event in Luxembourg?",
+            "answer": "Game of Code",
+            "electricity": 2
+        }
+
+        res.render('answer-correct', { title: 'Correct Answer', question: questionVariable, isCorrect: isCorrect });
+    }
+);
+
+router.get(
+    '/questions/:questionId/answer-wrong',
+    function(req, res)
+    {
+        res.render('answer-wrong', { title: 'Correct Answer' });
     }
 );
 

@@ -2,8 +2,32 @@ extends layout
 
 block menu
     include menu.pug
-    
+
 block content
     div.card
         div.card-body
-            p ask-electricity...
+            h1 Request Electricity
+
+            p Empower your city by asking questions to players, so they can prove they have the power to answer!
+
+            div.input-group.mb-3
+                input.form-control(type="text", placeholder="Search players")
+                div.input-group-append
+                    button.btn.btn-primary(type="button")
+                        span Search players &nbsp;
+                        i.fa.fa-search
+            table.table
+                each user in users
+                    tr
+                        td
+                            img.avatar(src=user.avatar)
+                        td=user.name
+                        td
+                            i.fa.fa-globe.text-success &nbsp
+                            span=user.ropes
+                            span &nbsp;&nbsp;
+                            i.fa.fa-bolt.text-warning &nbsp
+                            span=user.energy
+                        td
+                            button(type=button class='btn btn-success')
+                                i.fa.fa-bolt &nbsp;Request Electricity
